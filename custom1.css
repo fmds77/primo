@@ -1,0 +1,128 @@
+/** primo new UI - FMDS 20170819 */
+
+/*Uncomment the following lines to move facets to the left*/
+
+/*
+prm-search > md-content.md-primoExplore-theme .main {
+    display: -webkit-flex; !* Safari *!
+    -webkit-flex-flow: row-reverse wrap; !* Safari 6.1+ *!
+    display: flex;
+    flex-flow: row-reverse wrap;
+
+}
+.screen-gt-sm .sidebar{
+    webkit-flex: 0 0 15%;
+    flex: 0 0 15%;
+}
+
+*/
+
+/** element styles **/
+
+html, body {
+	background-color: #fff;
+	height: 100%; /* eliminates background color bug on mobile */
+}
+
+body {
+	color: #262223;
+}
+
+a {
+	color: #f03;
+}
+
+a:hover {
+	background-color: rgba(237,0,51,0.1);	
+	box-shadow: inset 0 -1px 0 0 rgba(153,0,51,.5);
+	color: #3a3a3a;
+}
+
+/** directive styles **/
+
+/* height adjustment for logo */
+prm-topbar {
+	height: 72px;
+}
+
+/* top bar styles */
+prm-topbar .top-nav-bar {
+	background-color: #903;
+	color: #fff;
+}
+
+prm-user-area .user-menu-button .user-name {
+	color: #fff;
+}
+
+/* removed styles on logo hover state */
+prm-logo a:hover {
+	background-color: transparent;	
+	box-shadow: none;
+}
+
+/* sign in menu styles */
+prm-user-area md-fab-toolbar.md-left .md-toolbar-tools {
+	background-color: #903;
+}
+
+/* sign in menu styles on mobile */
+md-dialog.light-on-dark-dialog {
+	background-color: rgba(164,30,52,0.9);	
+}
+
+/* made the default hover background color darker (eg. advanced search) */
+prm-topbar .md-button:hover, .md-button:hover {
+	background-color: rgba(58,58,58,.25) !important;		
+}
+
+/* hides the language selection link */
+prm-user-area .user-menu-button .user-language {
+	display: none;
+}
+
+/* search bar styles */
+prm-search-bar {
+	background-color: #ed0033;
+}
+
+	/* changed the default search icon styles */
+	prm-search-bar .simple-search-wrapper .search-actions .md-button {
+		color: #ed0033;
+	}
+
+	prm-search-bar .simple-search-wrapper .search-actions .md-button:hover {
+		background-color: rgba(237,0,51,0.1);	
+		color: #903;
+	}
+
+/* history and favorites section */
+md-toolbar {
+	background-color: #eee !important;
+}
+
+	/* tab styles in history and favorites section */
+	md-tab-item.md.active, md-tab-item.md-tab.md-ink-ripple.md-active {
+		color: #903;
+	}
+
+	md-tabs md-ink-bar {
+		background-color: #903;	
+	}
+
+
+/** media queries **/
+
+@media (max-width: 599px) {
+
+	/* hides the history and favorite icons that overlap the logo */
+	prm-search-bookmark-filter.view-switcher.layout-align-end-center.layout-row.flex-noshrink {
+		display: none;
+	}
+
+}
+
+/** from custom theme **/
+.md-input-color-underline, .new-result-item .list-item-count, .prm-secondary-bg.prm-hue1, md-input-container.empty-select-on-init:not(.md-input-focused) .md-input-container-dummy>.md-select-dummy md-select-value:after, md-input-container.empty-select-on-init:not(.md-input-focused) md-select md-select-value:after, md-input-container:after, md-progress-linear[md-mode=indeterminate].header-progress-bar .prm-hue1.md-bar, md-radio-button.md-checked ._md-on, md-radio-button.md-checked .md-on, md-tabs md-ink-bar, prm-tags-list .md-chips ._md-chip-input-container:after, prm-tags-list .md-chips .md-chip-input-container:after, prm-tags-list md-chips ._md-chip-input-container:after, prm-tags-list md-chips .md-chip-input-container:after {
+		background-color: #903;
+}
