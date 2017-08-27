@@ -51,15 +51,15 @@ prm-page-nav-menu {
 /** typography styles **/
 @font-face {
     font-family: Gotham-Narrow;
-    src: url(../webfont/GothamNarrow-Light.otf);
+    src: url(webfont/GothamNarrow-Light.otf);
 }
 @font-face {
     font-family: Gotham-Bold;
-    src: url(../webfont/GothamNarrow-Bold.otf);
+    src: url(webfont/GothamNarrow-Bold.otf);
 }
 @font-face {
     font-family: Gotham-Medium;
-    src: url(../webfont/GothamNarrow-Medium.otf);
+    src: url(webfont/GothamNarrow-Medium.otf);
 }
 @font-face {
     font-family: Gotham-Medium-Italic;
@@ -434,4 +434,24 @@ button.libchat_online {
 
 button.libchat_online:hover {
 	background-color: #903 !important;
+}
+
+button.libchat_offline {
+	background-color: rgba(0,0,0,0.1) !important;
+	color: #fff !important;
+	cursor: text !important;
+}
+
+/** syndetics unbound **/
+
+.unbound_mega .unbound_footer a {
+	background-color: transparent !important;
+	border: none !important;
+	color: #f03;
+	text-transform: uppercase;
+}
+.unbound_mega .unbound_footer a:hover {
+	background-color: #903 !important;
+	border: none!important;
+	color: #fff;
 }
