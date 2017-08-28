@@ -81,8 +81,9 @@ body {
 	letter-spacing: 0.03rem;
 }
 
+[class*=_more], /* read more links in syndetics unbound */
 a {
-	color: #f03;
+	color: #ed0033;
 }
 
 a:hover {
@@ -208,7 +209,7 @@ prm-brief-result .item-title span {
 }
 
 prm-brief-result .item-title span:hover {
-	color: #f03;
+	color: #ed0033;
 }
 
 /* separate line for publication date - as requested by tracy (not sure how it affects other areas not yet explored/seen */
@@ -222,7 +223,7 @@ prm-highlight>span {
 
 /* available online styles */
 .md-button.arrow-link-button .button-content {
-	color: #f03;
+	color: #ed0033;
 }
 
 .md-button.arrow-link-button:hover .button-content, /* firefox and ie fix */
@@ -253,7 +254,7 @@ prm-facet prm-icon {
 	}
 	
 .recommendations-title {
-	color: #f03;
+	color: #ed0033;
 }
 
 .recommendations-title:hover>span>span {
@@ -329,7 +330,7 @@ prm-browse-search-bar .advanced-search-backdrop, prm-journals-search-bar .advanc
 
 /* brief results available locations */
 .duedate>span, .fulltext>span, .fulltext_linktorsrc>span, .getit>span, .login-dialog .collapsable-container md-list md-list-item .md-list-item-inner, .login-dialog .md-list[class$=-line] md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list[class$=-line] md-list-item .md-list-item-text h3, .login-dialog .md-list[class$=-line] md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list[class$=-line] md-list-item>.md-no-style .md-list-item-text h3, .login-dialog .md-list md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item .md-list-item-text h3, .login-dialog .md-list md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item>.md-no-style .md-list-item-text h3, .login-dialog md-list md-list-item .md-list-item-text .list-item-title, .login-dialog md-list md-list-item .md-list-item-text h3, .login-dialog md-list md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog md-list md-list-item>.md-no-style .md-list-item-text h3, .md-button.arrow-link-button .button-content, .md-button.arrow-link-button [link-arrow], .not_restricted>span, .prm-links, .restricted>span, .separate-list-items md-list-item .item-loader-with-text .md-button, .tiles-grid-tile .tile-header .header-link .arrow-icon, .tiles-grid-tile .tile-header .header-link:focus, .tiles-grid-tile .tile-header .header-link:hover, .tiles-grid-tile .tile-header .md-button, .woldcat>span, [class*=_more]>span, [class*=_unknown]>span, [class*=available]>span, [class*=check_]>span, [class*=does_not_exist]>span, [class*=FT]>span, [class*=may_]>span, [class*=NFT]>span, [class*=no_]>span, [class*=unavailable]>span, a, md-grid-tile .tile-header .header-link .arrow-icon, md-grid-tile .tile-header .header-link:focus, md-grid-tile .tile-header .header-link:hover, md-grid-tile .tile-header .md-button, md-input-container.has-fixed-message [ng-message] a, md-list-item.list-item-as-link, md-tabs.tabs-as-app .back-button, md-tabs.tabs-as-links md-tab-item, md-tabs.tabs-as-links md-tab-item:not([disabled]), prm-tags-list .md-chips .md-chip .md-chip-content strong, prm-tags-list .md-chips md-chip .md-chip-content strong, prm-tags-list md-chips .md-chip .md-chip-content strong, prm-tags-list md-chips md-chip .md-chip-content strong {
-	color: #f03;
+	color: #ed0033;
 }
 
 /* brief results available online hover style */
@@ -340,7 +341,7 @@ prm-browse-search-bar .advanced-search-backdrop, prm-journals-search-bar .advanc
 
 /* full view results - viewit */
 prm-alma-mashup .viewIt > ul > li a !important {
-	color: #f03;
+	color: #ed0033;
 	}
 
 /* checkbox styles */
@@ -375,7 +376,7 @@ prm-alma-mashup .viewIt > ul > li a !important {
 
 /* advanced search - add a new line button */
 .md-button.md-primary {
-	color: #f03;
+	color: #ed0033;
 	}
 
 /* advanced search - add a new line button hover */	
@@ -391,7 +392,7 @@ prm-alma-mashup .viewIt > ul > li a !important {
 
 /* brief results refine link */
 .bar prm-authentication .md-button.link-alt-color, .bar prm-authentication .section-title prm-icon.md-button, .md-button.button-as-link.link-alt-color, .section-title .bar prm-authentication prm-icon.md-button, .section-title prm-icon.md-button.button-as-link {
-	color: #f03;
+	color: #ed0033;
 	}
 
 /* brief results refine link hover*/
@@ -402,7 +403,7 @@ prm-alma-mashup .viewIt > ul > li a !important {
 
 /* full view sidebar links */
 .md-button.button-link, .tiles-grid-tile .tile-content>.md-button, md-grid-tile .tile-content>.md-button {
-	color: #f03;
+	color: #ed0033;
 	}
 
 /* full view sidebar links hover */
@@ -415,11 +416,18 @@ prm-alma-mashup .viewIt > ul > li a !important {
 .md-button {
 	white-space: normal; /* centers the text with the icon */
 	}
+	
+.md-button._md-nav-button {
+	height: 100%; /* height adjustment so the hover state covers the whole button */
+	}
 
+li.md-nav-item { /* height adjustment so the hover state covers the whole button */
+	height: 100%;
+	}
 
 /** libchat **/
 .libchat-popup {
-	background-color: #f3f3f3;
+	background-color: #f2f2f2;
 	bottom: 15px;
 	box-shadow: 0 1px 0 0 rgba(0,0,0,.03), 0 5px 5px -3px rgba(0,0,0,.07);
 	padding: 20px;
@@ -442,16 +450,40 @@ button.libchat_offline {
 	cursor: text !important;
 }
 
-/** syndetics unbound **/
+
+/** syndetics unbound styles **/
 
 .unbound_mega .unbound_footer a {
 	background-color: transparent !important;
 	border: none !important;
-	color: #f03;
+	color: #ed0033;
 	text-transform: uppercase;
 }
 .unbound_mega .unbound_footer a:hover {
 	background-color: #903 !important;
 	border: none!important;
 	color: #fff;
+}
+
+.unbound_cover_highlighted + .unbound_format {
+	background-color: #f03 !important;
+}
+
+.unbound_cover_highlighted .unbound_cover, .unbound_book_highlighted .unbound_cover {
+	border: 2px solid #f03 !important;
+}
+
+.unbound_hover_title {
+	color: #903 !important;
+}
+
+.unbound_hover_link_button {
+	background-color: #f03 !important;
+	border: none !important;
+	border-radius: 2px !important;
+	font-family: "Gotham-Narrow", sans-serif;
+	}
+
+.unbound_hover_link_button:hover {
+	background-color: #903 !important;
 }

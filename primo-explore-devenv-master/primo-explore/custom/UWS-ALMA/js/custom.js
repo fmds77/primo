@@ -9,9 +9,9 @@
     });
 
     // Dynamically load the chat widget script
-    var script = document.createElement("script"); // Create a script element
-    script.src = "http://v2.libanswers.com/load_chat.php?hash=1a0d766d385e8ead60a389e759268750"; //Set it's src to the url
-    document.head.appendChild(script); // Add it to the head of the page
+    //var script = document.createElement("script"); // Create a script element
+    //script.src = "http://v2.libanswers.com/load_chat.php?hash=1a0d766d385e8ead60a389e759268750"; //Set it's src to the url
+    //document.head.appendChild(script); // Add it to the head of the page
 	
 	// Dynamically load the chat widget script
     var script = document.createElement("script"); // Create a script element
