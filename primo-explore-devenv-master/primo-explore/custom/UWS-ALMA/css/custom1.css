@@ -102,6 +102,20 @@ h3.section-title-header, h3.sidebar-header { /* facets header */
 	font-size: 0.9rem;
 	}
 
+img.responsive-img {
+	width: 100%;
+	height: auto;
+	}
+
+/* changes selection color */
+::selection {
+  background: #f0d7d6; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #f0d7d6; /* Gecko Browsers */
+}
+
+
 /** directive styles **/
 
 /* change spinner-loader styles */
@@ -109,6 +123,11 @@ h3.section-title-header, h3.sidebar-header { /* facets header */
 	background-color: #903 !important;
 	box-shadow: inset 0 -1px 0 0 rgba(58,58,58,0.2);
 	}
+
+/* hide home page cards - or anything */
+.hideme {
+	display: none;
+}
 
 /* height adjustment for logo */
 prm-topbar {
@@ -172,7 +191,7 @@ prm-search-bar .simple-search-wrapper .search-actions .md-button:hover {
 	background-color: rgba(237,0,51,0.1);	
 	color: #903;
 	}
-
+	
 /* back to simple search button */
 prm-search-bar .search-switch-buttons .md-button.switch-to-simple {
 	color: #fff;
@@ -214,11 +233,11 @@ prm-brief-result .item-title span:hover {
 
 /* separate line for publication date - as requested by tracy (not sure how it affects other areas not yet explored/seen */
 span.media-delimiter {
-	display: none; /* hides the colon that serves as the delimiter/separator between author and publication date */
+	/*display: none;  hides the colon that serves as the delimiter/separator between author and publication date; disabled */
 	}
 
 prm-highlight>span {
-	/*display: block;  makes the publication date appear as a new line */
+	/*display: block;  makes the publication date appear as a new line; disabled as it doesn't play well with date ranges */
 	}
 
 /* available online styles */
@@ -257,9 +276,9 @@ prm-facet prm-icon {
 	color: #ed0033;
 }
 
-.recommendations-title:hover>span>span {
-	background-color: rgba(237,0,51,0.1);
-	box-shadow: inset 0 -1px 0 0 rgba(153,0,51,.5);
+.recommendations-title:hover>span>span, .recommendations-title.hover>span>span {
+	background-color: rgba(237,0,51,0.1) !important;
+	box-shadow: inset 0 -1px 0 0 rgba(153,0,51,.5) !important;
 	color: #903;
 	}
 	

@@ -1,6 +1,6 @@
-<md-content layout-xs="column" layout="row" class="display-block-xs _md md-primoExplore-theme layout-xs-column layout-row">
+<md-content layout-xs="column" layout="row" class="display-block-xs _md md-primoExplore-theme layout-xs-column layout-row hideme">
     
-	<div flex-xs="100" flex="60" layout="column" class="layout-column flex-xs-100 flex-60">
+	<div flex-xs="100" flex="60" layout="column" class="layout-column flex-xs-100 flex-60 hideme">
         <md-card class="default-card _md md-primoExplore-theme">
             <md-card-title>
                 <md-card-title-text>
@@ -20,11 +20,9 @@
 				You may notice changes as the new interface is improved and finalised.  
             </md-card-content>
         </md-card>
-       
-    </div>
-	<!---->
+    </div>	
 	
-    <div flex-xs="100" flex="40" layout="column" class="layout-column flex-xs-100 flex-40">
+    <div flex-xs="100" flex="40" layout="column" class="layout-column flex-xs-100 flex-40 hideme">
         <md-card class="default-card _md md-primoExplore-theme">
             <md-card-title>
                 <md-card-title-text>
@@ -35,8 +33,7 @@
                 <p>
 				Chat with our <a href="http://library.westernsydney.edu.au/main/help/contact-us" target="_blank" class="md-primoExplore-theme">Online Librarian</a> or ask campus library staff.
                 </p>
-                <div id="libchat_1a0d766d385e8ead60a389e759268750"></div>
-
+                <!--<div id="libchat_1a0d766d385e8ead60a389e759268750"></div>-->
             </md-card-content>
         </md-card>
         <md-card class="default-card _md md-primoExplore-theme">
@@ -46,22 +43,37 @@
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-			Let us know <a href="http://answers.library.westernsydney.edu.au/form.php" target="_blank" class="arrow-link md-primoExplore-theme">what you think</a>, including suggestions for improvements.                                   
-
-
-<!----><md-icon ng-if="::(!(ctrl.iconType === 'fa'))" md-svg-icon=":" aria-label="icon-undefined" class="md-primoExplore-theme" aria-hidden="true" style=""></md-icon><!---->
+				Let us know <a href="http://answers.library.westernsydney.edu.au/form.php" target="_blank" class="arrow-link md-primoExplore-theme">what you think</a>, including suggestions for improvements.
+				<md-icon ng-if="::(!(ctrl.iconType === 'fa'))" md-svg-icon=":" aria-label="icon-undefined" class="md-primoExplore-theme" aria-hidden="true" style=""></md-icon>
 <prm-icon-after parent-ctrl="ctrl"></prm-icon-after></prm-icon>
                 </a>
             </md-card-content>
         </md-card>
+    </div>
+</md-content>
+
+
+<md-content layout-xs="column" layout="row" class="display-block-xs _md md-primoExplore-theme layout-xs-column layout-row">
+	<div flex-xs="100" flex="60" layout="column" class="layout-column flex-xs-100 flex-60">
+        <md-card class="default-card _md md-primoExplore-theme">
+			<img src="/custom/UWS-ALMA/img/DigitalText.jpg" class="responsive-img">
+        </md-card>
+    </div>
+	
+	<div flex-xs="100" flex="40" layout="column" class="layout-column flex-xs-100 flex-40">
+        <md-card class="default-card _md md-primoExplore-theme">
+			<img src="/custom/UWS-ALMA/img/DigitalText.jpg" class="responsive-img">
+        </md-card>
+        <md-card class="default-card _md md-primoExplore-theme">
+			<img src="/custom/UWS-ALMA/img/DigitalText.jpg" class="responsive-img">
+        </md-card>
+    </div>
+
+	<div flex-xs="100" flex="100" class="hideme">
+        <img src="/custom/UWS-ALMA/img/DigitalText.jpg" class="responsive-img">
     </div>
 	<div class="libchat-popup">
 		<p>Chat with our online librarian</p>
 		<div id="libchat_ea89a9251e2ffa561d8e935d8c60a3f3"></div>
 	</div>
 </md-content>
-	
-
-	<div flex-xs="100" flex="100">
-        <img src="/custom/UWS-ALMA/img/DigitalText.jpg">
-    </div>
