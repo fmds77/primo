@@ -475,13 +475,15 @@ button.libchat_offline {
 .unbound_mega .unbound_footer a {
 	background-color: transparent !important;
 	border: none !important;
-	color: #ed0033;
+	color: #ed0033 !important;
 	text-transform: uppercase;
 }
-.unbound_mega .unbound_footer a:hover {
-	background-color: #903 !important;
-	border: none!important;
-	color: #fff;
+
+.unbound_mega.primo .unbound_footer a:hover, .unbound_mega .unbound_footer a:hover {
+	background-color: #c4c2c3 !important;
+	border: none !important;
+	color: #fff !important; /* text color can't be overriden, syndetics own css takes precedence :( */
+	text-decoration-color: #fff !important;
 }
 
 .unbound_cover_highlighted + .unbound_format {

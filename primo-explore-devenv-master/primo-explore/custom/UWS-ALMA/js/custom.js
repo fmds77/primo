@@ -1,26 +1,3 @@
-// libchat widget
-
-(function () {
-    "use strict";
-    'use strict';
-
-    var app = angular.module('viewCustom', ['angularLoad'], function ($compileProvider) {
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|data):/);
-    });
-
-    // Dynamically load the chat widget script
-    //var script = document.createElement("script"); // Create a script element
-    //script.src = "http://v2.libanswers.com/load_chat.php?hash=1a0d766d385e8ead60a389e759268750"; //Set it's src to the url
-    //document.head.appendChild(script); // Add it to the head of the page
-	
-	// Dynamically load the chat widget script
-    var script = document.createElement("script"); // Create a script element
-    script.src = "https://v2.libanswers.com/load_chat.php?hash=ea89a9251e2ffa561d8e935d8c60a3f3"; //Set it's src to the url
-    document.head.appendChild(script); // Add it to the head of the page
-
-})();
-
-
 // syndetics
 
 (function ()
@@ -28,15 +5,13 @@
 	"use strict";
 	'use strict';
 
-
-	var app = angular.module('viewCustom', ['angularLoad']);
+	var app = angular.module('viewCustom', ['angularLoad'], function ($compileProvider) {
+		$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|data):/);
+	});
 
 	/****************************************************************************************************/
-
 	/*In case of CENTRAL_PACKAGE - comment out the below line to replace the other module definition*/
-
 	/*var app = angular.module('centralCustom', ['angularLoad']);*/
-
 	/****************************************************************************************************/
 
 	app.component('prmFullViewAfter', {
@@ -44,6 +19,7 @@
 		controller: 'FullViewAfterControllerUnbound',
 		template: ''
 	});
+	
 	app.controller('FullViewAfterControllerUnbound', ['angularLoad', function (angularLoad)
 		{
 		var vm = this;
@@ -92,6 +68,44 @@
 			});
 			};
 		}]);
-	})();
+
+	// Dynamically load the chat widget script
+	var script = document.createElement("script"); // Create a script element
+	script.src = "https://v2.libanswers.com/load_chat.php?hash=ea89a9251e2ffa561d8e935d8c60a3f3"; //Set it's src to the url
+	document.head.appendChild(script); // Add it to the head of the page
+
+	// Remove 'tabs' from auto suggestions in simple search
+	app.component('prmSearchBarAfter', {
+		bindings: { parentCtrl: '<' },
+
+		controller: function ($scope) {
+			$scope.$parent.$ctrl.tabs = [];
+		}
+	});
+
+	// Automatically activate search after changing search scope 
+	// (reload results with changed search scope)
+	app.component('prmTabsAndScopesSelectorAfter', {
+		bindings: { parentCtrl: '<' },
+		controller: function ($scope) {
+			setTimeout(function () {
+				function activateSearch() {
+					document.getElementsByClassName(
+						"zero-margin button-confirm md-button md-primoExplore-theme"
+					)[0].click();
+				}
+				var searchScopes = 
+					document.querySelectorAll('[id^="select_option_"]');
+				for (var i in searchScopes) {
+					if (searchScopes.hasOwnProperty(i)) {
+						searchScopes[i].onclick = function () {
+							activateSearch();
+						};
+					}
+				}
+			}, 500)
+		}
+	});
+})();
 
 
