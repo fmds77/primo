@@ -69,6 +69,20 @@
 			};
 		}]);
 
+	// Hook window open functionality so we can catch when a new
+	// window is opened (and if it's libchat, resize it)
+	window.myOpen = window.open;
+
+	window.open = function () {
+
+		var win = window.myOpen.apply(this, arguments);
+
+		if (win.name === "libchat") {
+
+			win.resizeTo(400, 500);
+		}
+	};
+
 	// Dynamically load the chat widget script
 	var script = document.createElement("script"); // Create a script element
 	script.src = "https://v2.libanswers.com/load_chat.php?hash=ea89a9251e2ffa561d8e935d8c60a3f3"; //Set it's src to the url
