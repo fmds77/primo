@@ -488,7 +488,14 @@ button.libchat_offline {
 .unbound_hover_link_button:hover {
 	background-color: #903 !important;
 }
-	
+
+/* Unsupported browser message */
+#unsupported-browser {
+	font-size: 1.3em;
+	margin: 10% auto;
+	width: 100%;
+	max-width: 600px;
+}
 
 /** media queries **/
 

@@ -4,6 +4,23 @@
 	{
 	"use strict";
 	'use strict';
+	
+	// Detect IE versions <= 10 and serve up an unsupported browser message
+	var ua = window.navigator.userAgent;
+
+	if (ua.indexOf('MSIE ') >= 0) {
+		document.body.innerHTML = 
+			"<div id='unsupported-browser'>"
+			+ "<h1>You're viewing the University Library in an unsupported browser</h1>"
+			+ "<p>Rather than show you a page that may not work properly, we're showing you this."
+			+ " We suggest using the latest versions of the following:</p>"
+			+ "<ul><li>Google Chrome</li><li>Mozilla Firefox</li><li>Apple Safari</li>"
+			+ "<li>Microsoft IE 11 or Edge</li></ul>"
+			+ "<p>This page should work in full featured mobile browsers.</p></div>";
+
+		return;
+	}
+
 
 	var app = angular.module('viewCustom', ['angularLoad'], function ($compileProvider) {
 		$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|data):/);
@@ -68,6 +85,20 @@
 			});
 			};
 		}]);
+
+	// Hook window open functionality so we can catch when a new
+	// window is opened (and if it's libchat, resize it)
+	window.myOpen = window.open;
+
+	window.open = function () {
+
+		var win = window.myOpen.apply(this, arguments);
+
+		if (win.name === "libchat") {
+
+			win.resizeTo(400, 500);
+		}
+	};
 
 	// Dynamically load the chat widget script
 	var script = document.createElement("script"); // Create a script element
