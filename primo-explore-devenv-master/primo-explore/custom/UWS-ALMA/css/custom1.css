@@ -47,20 +47,7 @@ prm-search > md-content.padded-container-md-primoExplore-theme {
 prm-page-nav-menu {
 	display: none;
 }
-
-/** typography styles **/
-@font-face {
-    font-family: Gotham-Narrow;
-    src: url(webfont/GothamNarrow-Light.otf);
-}
-@font-face {
-    font-family: Gotham-Bold;
-    src: url(webfont/GothamNarrow-Bold.otf);
-}
-@font-face {
-    font-family: Gotham-Medium;
-    src: url(webfont/GothamNarrow-Medium.otf);
-}
+s
 @font-face {
     font-family: Gotham-Medium-Italic;
     src: url(http://library.westernsydney.edu.au/main/sites/all/themes/western_library/fonts/GothamNarrow-MediumItalic.otf);
@@ -230,6 +217,14 @@ prm-brief-result .item-title span {
 prm-brief-result .item-title span:hover {
 	color: #ed0033;
 }
+
+span.text.tiny-uppercase-text {
+	display: none; /* hides the page numbers - as requested by tracy 20170906 */
+	}
+	
+prm-search-result-list .pages-separated-with-gaps .results-title:not(.results-title-favorites) {
+	padding: 0px; /* moves number of results to the left as a result from page numbers being removed */
+	}
 
 /* separate line for publication date - as requested by tracy (not sure how it affects other areas not yet explored/seen */
 span.media-delimiter {
