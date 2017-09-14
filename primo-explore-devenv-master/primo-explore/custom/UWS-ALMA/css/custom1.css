@@ -194,6 +194,10 @@ prm-search-bar .search-switch-buttons .md-button.switch-to-simple {
 	border: none;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
+
+md-card.default-card, md-card > img { /* IE 11 fix for cards height */
+	flex: 0 0 auto;
+	}
 	
 /* history and favorites section */
 md-toolbar {
