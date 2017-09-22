@@ -47,7 +47,20 @@ prm-search > md-content.padded-container-md-primoExplore-theme {
 prm-page-nav-menu {
 	display: none;
 }
-s
+
+/** typography styles **/
+@font-face {
+    font-family: Gotham-Narrow;
+    src: url(webfont/GothamNarrow-Light.otf);
+}
+@font-face {
+    font-family: Gotham-Bold;
+    src: url(webfont/GothamNarrow-Bold.otf);
+}
+@font-face {
+    font-family: Gotham-Medium;
+    src: url(webfont/GothamNarrow-Medium.otf);
+}
 @font-face {
     font-family: Gotham-Medium-Italic;
     src: url(http://library.westernsydney.edu.au/main/sites/all/themes/western_library/fonts/GothamNarrow-MediumItalic.otf);
@@ -198,6 +211,16 @@ prm-search-bar .search-switch-buttons .md-button.switch-to-simple {
 md-card.default-card, md-card > img { /* IE 11 fix for cards height */
 	flex: 0 0 auto;
 	}
+
+/* home page cards */
+md-card.default-card {
+	background-color: #fff;
+	border: 1px solid #eaebea;
+}
+
+md-card md-card-title md-card-title-text {
+	border-bottom: 1px dashed #c4c2c3;
+}
 	
 /* history and favorites section */
 md-toolbar {
@@ -453,6 +476,16 @@ button.libchat_offline {
 	cursor: text !important;
 }
 
+#libchat_1a0d766d385e8ead60a389e759268750 .lci_chat_load {
+	font-family: Gotham-Narrow, sans-serif !important;
+	width: 100% !important;
+}
+
+/* libchat panel */
+.s-la-widget textarea.input-sm {
+	resize: none !important;
+	height: 80px !important;
+}
 
 /** syndetics unbound styles **/
 
