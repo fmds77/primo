@@ -119,25 +119,42 @@
 	// (reload results with changed search scope)
 	app.component('prmTabsAndScopesSelectorAfter', {
 		bindings: { parentCtrl: '<' },
+
 		controller: function ($scope) {
+
 			setTimeout(function () {
-				function activateSearch() {
+
+				var searchScopes = document.querySelectorAll('[id^="select_option_"]');
+
+				// Grab the search button in a variable so we don't have to keep
+				// getting it in the loop
+				var searchButton =
 					document.getElementsByClassName(
-						"zero-margin button-confirm md-button md-primoExplore-theme"
-					)[0].click();
-				}
-				var searchScopes = 
-					document.querySelectorAll('[id^="select_option_"]');
+						"zero-margin"
+						+ " button-confirm"
+						+ " md-button"
+						+ " md-primoExplore-theme"
+					)[0];
+
+				// Loop over each drop down element and add a click handler that
+				// clicks the search button
 				for (var i in searchScopes) {
 					if (searchScopes.hasOwnProperty(i)) {
-						searchScopes[i].onclick = function () {
-							activateSearch();
-						};
+
+						searchScopes[i].addEventListener("click", function () {
+							// setTimeout is needed to allow the dropdown to
+							// actually change its value before searching
+							setTimeout(function () { searchButton.click() }, 50);
+						});
 					}
 				}
-			}, 500)
+
+			}, 300)
+
 		}
+
 	});
+	
 })();
 
 
