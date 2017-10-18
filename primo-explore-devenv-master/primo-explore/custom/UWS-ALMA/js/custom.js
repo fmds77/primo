@@ -108,7 +108,8 @@
 	// Add chat widget markup to the prm-explore-main-after directive
 	app.component('prmExploreMainAfter', {
 		bindings: { parentCtrl: '<' },
-		template: "<div class='libchat-popup'><p>Chat with our online librarian</p><div id='libchat_ea89a9251e2ffa561d8e935d8c60a3f3'></div></div>"
+		//template: "<div class='libchat-popup'><p>Chat with our online librarian</p><div id='libchat_ea89a9251e2ffa561d8e935d8c60a3f3'></div></div>"
+		template: "<div class='libchat-popup'><div id='libchat_ea89a9251e2ffa561d8e935d8c60a3f3'></div></div>"
 	});
 
 	// Remove 'tabs' from auto suggestions in simple search

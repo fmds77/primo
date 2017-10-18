@@ -480,11 +480,11 @@ li.md-nav-item { /* height adjustment so the hover state covers the whole button
 /** libchat **/
 .libchat-popup {
 	background-color: #f2f2f2;
-	bottom: 15px;
-	box-shadow: 0 1px 0 0 rgba(0,0,0,.03), 0 5px 5px -3px rgba(0,0,0,.07);
-	padding: 20px;
+	bottom: 5px;
+	/* box-shadow: 0 1px 0 0 rgba(0,0,0,.03), 0 5px 5px -3px rgba(0,0,0,.07); */
+	padding: 0px;
 	position: fixed;
-	right: 15px;
+	right: 5px;
 	text-align:center;
 }
 
@@ -505,6 +505,10 @@ button.libchat_offline {
 #libchat_1a0d766d385e8ead60a389e759268750 .lci_chat_load {
 	font-family: Gotham-Narrow, sans-serif !important;
 	width: 100% !important;
+}
+
+#libchat_ea89a9251e2ffa561d8e935d8c60a3f3 button {
+	border-radius: 0px;
 }
 
 /* libchat panel */
