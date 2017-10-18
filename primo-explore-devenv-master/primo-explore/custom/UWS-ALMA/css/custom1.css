@@ -70,7 +70,7 @@ prm-page-nav-menu {
 /** element styles **/
 
 html, body {
-	background-color: #fff;
+	background-color: #f2f2f2; /* requested by tracy - 20171018 */
 	height: 100%; /* eliminates background color bug on mobile */
 }
 
@@ -253,6 +253,15 @@ prm-search-result-list .pages-separated-with-gaps .results-title:not(.results-ti
 	padding: 0px; /* moves number of results to the left as a result from page numbers being removed */
 	}
 
+.list-item-wrapper {
+	background-color: #fff; /* as requested by tracy 20171018 */
+}
+
+	/* .list-item-wrapper:hover {
+		background-color: #f2f2f2;
+	} */
+
+
 /* separate line for publication date - as requested by tracy (not sure how it affects other areas not yet explored/seen */
 span.media-delimiter {
 	/*display: none;  hides the colon that serves as the delimiter/separator between author and publication date; disabled */
@@ -282,6 +291,23 @@ prm-search-result-availability-line button prm-icon:hover {
 .md-chips {
 	font-family: "Gotham-Narrow", "Source Sans Pro", Tahoma, Helvetica, sans-serif;
 }
+
+.md-chips .md-chip {
+	background-color: #f0d7d6;
+}
+
+prm-breadcrumbs .md-chips .md-chip-content:before {
+	background-color: transparent;
+	box-shadow: none;
+	}
+
+prm-breadcrumbs .md-chips .md-chip-content:hover .persistence-button {
+	background-color: #f0d7d6;
+}
+prm-breadcrumbs .md-chip.persistent-facet {
+	background-color: #e1b4af;
+}
+
 
 /* facets chevron icon */
 prm-facet prm-icon {

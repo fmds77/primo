@@ -102,8 +102,8 @@
 
 	// Dynamically load the chat widget script
 	var script = document.createElement("script"); // Create a script element
-	//script.src = "https://v2.libanswers.com/load_chat.php?hash=ea89a9251e2ffa561d8e935d8c60a3f3"; //Set it's src to the url
-	script.src = "https://v2.libanswers.com/load_chat.php?hash=1a0d766d385e8ead60a389e759268750";
+	script.src = "https://v2.libanswers.com/load_chat.php?hash=ea89a9251e2ffa561d8e935d8c60a3f3";
+	//script.src = "https://v2.libanswers.com/load_chat.php?hash=1a0d766d385e8ead60a389e759268750"; //Set it's src to the url
 	document.head.appendChild(script); // Add it to the head of the page
 
 	// Remove 'tabs' from auto suggestions in simple search
