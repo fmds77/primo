@@ -124,6 +124,10 @@ img.responsive-img {
 	box-shadow: inset 0 -1px 0 0 rgba(58,58,58,0.2);
 	}
 
+prm-spinner.dark-on-light .diamond {
+	background-color: #903 !important;
+}
+	
 /* hide home page cards - or anything */
 .hideme {
 	display: none;
@@ -354,7 +358,19 @@ prm-full-view .services-index-under .md-button {
 .md-autocomplete-suggestions .suggestion-scope, .prm-primary-color, .request-form md-input-container .md-input-container-dummy>.md-select-dummy ._md-select-value._md-select-placeholder, .request-form md-input-container .md-input-container-dummy>.md-select-dummy .md-select-value.md-select-placeholder, .request-form md-input-container label, .request-form md-input-container label:not(.md-no-float):not(._md-container-ignore), .request-form md-input-container md-select ._md-select-value._md-select-placeholder, .request-form md-input-container md-select .md-select-value.md-select-placeholder, .result-item-actions .md-icon-button, .result-item-actions .more-options-button, md-tab-content .tab-content-header md-input-container md-select-value .md-text, md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-active:not([disabled]), md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-focused:not([disabled]), prm-add-query-to-saved-searches .custom-button {
 	color: #903;
 	}
+
+/* citation styles */
+.prm-citation-title, md-list.prm-list.prm-linkable-list-items md-list-item .item-title, prm-browse-search md-list.prm-list.prm-linkable-list-items md-list-item .item-title, prm-citation-trails-item.active-item .item-title, prm-opac .related-title .related-title-name, prm-tags-results-list md-list.prm-list.prm-linkable-list-items md-list-item .item-title {
+	color: #903;
+	line-height: 1.2em;
+	}
 	
+	.md-button.arrow-link-button .button-content:focus, .md-button.arrow-link-button .button-content:hover, .md-button.arrow-link-button .hover.button-content, .md-button.arrow-link-button:focus .button-content, .md-button.arrow-link-button:hover .button-content, .prm-links-hover.prm-hue-1, .recommendations-title.hover>span>span, .recommendations-title:hover>span>span, a.hover, a:focus, a:hover, prm-citation-trails-item.active-item md-card>.md-button:focus .item-title span, prm-citation-trails-item.active-item md-card>.md-button:hover .item-title span, prm-tags-list .md-chips .md-chip .md-chip-content:hover strong, prm-tags-list .md-chips md-chip .md-chip-content:hover strong, prm-tags-list md-chips .md-chip .md-chip-content:hover strong, prm-tags-list md-chips md-chip .md-chip-content:hover strong {
+		background-color: #f0d7d6;
+		box-shadow: none;
+		color: #ed0033;
+		}
+		
 /* secondary bar (search bar) */
 .prm-primary-bg, prm-browse-search-bar, prm-journals-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar {
 	background-color: #ed0033;
@@ -480,35 +496,38 @@ li.md-nav-item { /* height adjustment so the hover state covers the whole button
 /** libchat **/
 .libchat-popup {
 	background-color: #f2f2f2;
-	bottom: 5px;
+	bottom: 0px;
 	/* box-shadow: 0 1px 0 0 rgba(0,0,0,.03), 0 5px 5px -3px rgba(0,0,0,.07); */
 	padding: 0px;
 	position: fixed;
 	right: 5px;
 	text-align:center;
+	z-index: 10;
 }
 
 button.libchat_online {
 	font-family: 'Source Sans Pro', sans-serif !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	/* text-shadow: 1px 1px 1px rgba(0,0,0,0.8); */
 }
 
 button.libchat_online:hover {
 	background-color: #903 !important;
+	transition: all 0.2s ease-in-out 0s;
 }
 
 button.libchat_offline {
 	background-color: rgba(0,0,0,0.1) !important;
 	color: #fff !important;
 	cursor: text !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
 }
 
 #libchat_1a0d766d385e8ead60a389e759268750 .lci_chat_load {
 	font-family: Gotham-Narrow, sans-serif !important;
 	width: 100% !important;
-}
-
-#libchat_ea89a9251e2ffa561d8e935d8c60a3f3 button {
-	border-radius: 0px;
 }
 
 /* libchat panel */
@@ -554,6 +573,15 @@ button.libchat_offline {
 
 .unbound_hover_link_button:hover {
 	background-color: #903 !important;
+}
+
+/* altmetrics styles */
+.full-view-section.loc-altmetrics{
+   background-color: #f2f2f2;
+   margin-top:0px;
+   padding-left: 3em;
+
+
 }
 
 /* Unsupported browser message */
