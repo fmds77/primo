@@ -1,13 +1,12 @@
-(function ()
-	{
+(function () {
 	"use strict";
 	'use strict';
-	
+
 	// Detect IE versions <= 10 and serve up an unsupported browser message
 	var ua = window.navigator.userAgent;
 
 	if (ua.indexOf('MSIE ') >= 0) {
-		document.body.innerHTML = 
+		document.body.innerHTML =
 			"<div id='unsupported-browser'>"
 			+ "<h1>You're viewing the University Library in an unsupported browser</h1>"
 			+ "<p>Rather than show you a page that may not work properly, we're showing you this."
@@ -28,77 +27,60 @@
 	/*var app = angular.module('centralCustom', ['angularLoad']);*/
 	/****************************************************************************************************/
 
-	app.component('prmFullViewAfter', {
-		bindings: {parentCtrl: '<'},
-		controller: 'FullViewAfterControllerUnbound',
-		template: ''
-	});
+	// Load Altmetrics and Syndetics
+	app.controller('FullViewAfterController', ['angularLoad', function (angularLoad) {
 
-		// altmetrics
-		var app = angular.module('viewCustom', ['angularLoad']);
-		app.controller('FullViewAfterController', ['angularLoad', function (angularLoad) {
-			var vm = this;
-			vm.doi = vm.parentCtrl.item.pnx.addata.doi[0] || '';
-			vm.$onInit = function () {
-				angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now()).then(function () {});
-			};
-		}]);
+			self = this;
 
-		app.component('prmFullViewAfter', {
-			bindings: { parentCtrl: '<' },
-			controller: 'FullViewAfterController',
-			template: '<div class="full-view-section loc-altmetrics" flex-md="65" flex-lg="65" flex-xl="65" flex><div class="layout-full-width full-view-section-content" ng-if="$ctrl.doi"><div class="section-header" layout="row" layout-align="center center"><h2 class="section-title md-title light-text">AltMetrics</h2><md-divider flex></md-divider></div><div class="full-view-section"><div class="full-view-section-content"><div class="section-body" layout="row" layout-align="center center"><div class="spaced-rows" layout="column"><div ng-if="$ctrl.doi" class="altmetric-embed" data-badge-type="medium-donut" data-badge-details="right" data-doi="$ctrl.doi"></div></div></div></div></div></div></div>'
-		});
+			this.$onInit = function () {
 
-	// syndetics	
-	app.controller('FullViewAfterControllerUnbound', ['angularLoad', function (angularLoad)
-		{
-		var vm = this;
-
-		vm.$onInit = function ()
-			{
-			angularLoad.loadScript('https://unbound.syndetics.com/syndeticsunbound/connector/initiator.php?a_id=202&i_id=').then(function ()
-			{
-			if (typeof LibraryThingConnector !== 'undefined')
-				{
-				var _isbn = '';
-				var _title = '';
-				var _author = '';
-				var _id = '';
-				var _callnumber = '';
-				if ( vm.parentCtrl.item.pnx.search.isbn )
-					{
-					_isbn = vm.parentCtrl.item.pnx.search.isbn[0] || '';
-					}
-				if ( vm.parentCtrl.item.pnx.search.title )
-					{
-					_title = vm.parentCtrl.item.pnx.search.title[0] || '';
-					}
-				if ( vm.parentCtrl.item.pnx.search.creatorcontrib )
-					{
-					_author = vm.parentCtrl.item.pnx.search.creatorcontrib[0] || '';
-					}
-				if ( vm.parentCtrl.item.pnx.search.recordid )
-					{
-					_id = vm.parentCtrl.item.pnx.search.recordid[0] || '';
-					}
-				if ( vm.parentCtrl.item.delivery.bestlocation && vm.parentCtrl.item.delivery.bestlocation.callNumber)
-					{
-					_callnumber = vm.parentCtrl.item.delivery.bestlocation.callNumber || '';
-					}
-
-				var _metadata = {
-					'isbn': _isbn,
-					'title': _title,
-					'author': _author,
-					'id': _id,
-					'callnumber' : _callnumber
-				};
-				LibraryThingConnector.runUnboundWithMetadata(_metadata);
+				// Try to load the Altmetrics script and grab the DOI of this
+				// item. Disregard any errors so we can still try to load the
+				// Syndetics information
+				try {
+					this.doi = this.parentCtrl.item.pnx.addata.doi[0] || '';
+					angularLoad.loadScript('https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js?' + Date.now());
+				} catch (error) {
+					/* Empty */
 				}
-			});
+					
+				// Syndetics information loading
+				// Grab the long property chain in a nice variable
+				var data = self.parentCtrl.item.pnx.search;
+				
+				// Populate the metadata object
+				var _metadata = {
+					'isbn'	: data.isbn[0],
+					'title'	: data.title[0],
+					'author': data.creatorcontrib[0],
+					'id'	: data.recordid[0]
+				};
+				
+				if (self.parentCtrl.item.delivery.bestlocation 
+					&& self.parentCtrl.item.delivery.bestlocation.callNumber) {
+						
+					_metadata.callnumber = self.parentCtrl.item.delivery
+											.bestlocation.callNumber;
+				}
+
+				// Load the Syndetics script
+				angularLoad.loadScript('https://unbound.syndetics.com/syndeticsunbound/connector/initiator.php?a_id=202&i_id=').then(function () {
+
+					if (typeof LibraryThingConnector !== 'undefined') {
+						LibraryThingConnector.runUnboundWithMetadata(_metadata);
+					}
+				});
+
 			};
-		}]);
+		
+	}]);
+
+	// Insert the Altmetrics widget into the page
+	app.component('prmFullViewAfter', {
+		bindings: { parentCtrl: '<' },
+		controller: 'FullViewAfterController',
+		template: '<div class="full-view-section loc-altmetrics" flex-md="65" flex-lg="65" flex-xl="65" flex><div class="layout-full-width full-view-section-content" ng-if="$ctrl.doi"><div class="section-header" layout="row" layout-align="center center"><h2 class="section-title md-title light-text">AltMetrics</h2><md-divider flex></md-divider></div><div class="full-view-section"><div class="full-view-section-content"><div class="section-body" layout="row" layout-align="center center"><div class="spaced-rows" layout="column"><div ng-if="$ctrl.doi" class="altmetric-embed" data-badge-type="medium-donut" data-badge-details="right" data-doi="{{$ctrl.doi}}"></div></div></div></div></div></div></div>'
+	});	
 
 	// Hook window open functionality so we can catch when a new
 	// window is opened (and if it's libchat, resize it)
@@ -167,6 +149,5 @@
 			}, 300)
 		}
 	});
-	
-})();
 
+})();

@@ -344,13 +344,17 @@ a.md-button[aria-label="nui.mainmenu.label.tags"] {display:none;}
 
 /* side links */
 prm-full-view .services-index-under .md-button {
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 	}
 
 /** from custom theme **/
 
 /* primary color */
 .md-input-color-underline, .new-result-item .list-item-count, .prm-secondary-bg.prm-hue1, md-input-container.empty-select-on-init:not(.md-input-focused) .md-input-container-dummy>.md-select-dummy md-select-value:after, md-input-container.empty-select-on-init:not(.md-input-focused) md-select md-select-value:after, md-input-container:after, md-progress-linear[md-mode=indeterminate].header-progress-bar .prm-hue1.md-bar, md-radio-button.md-checked ._md-on, md-radio-button.md-checked .md-on, md-tabs md-ink-bar, prm-tags-list .md-chips ._md-chip-input-container:after, prm-tags-list .md-chips .md-chip-input-container:after, prm-tags-list md-chips ._md-chip-input-container:after, prm-tags-list md-chips .md-chip-input-container:after {
+		background-color: #903;
+}
+
+.prm-primary-bg.prm-hue3-important, prm-browse-search-bar.prm-hue3-important, prm-journals-search-bar.prm-hue3-important, prm-search-bar.prm-hue3-important, prm-spinner.prm-hue3-important.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue3-important, prm-user-area md-fab-toolbar.md-is-open md-fab-trigger ._md-fab-toolbar-background, prm-user-area md-fab-toolbar.md-is-open md-fab-trigger .md-fab-toolbar-background {
 		background-color: #903;
 }
 
@@ -576,12 +580,33 @@ button.libchat_offline {
 }
 
 /* altmetrics styles */
-.full-view-section.loc-altmetrics{
+.full-view-section.loc-altmetrics {
    background-color: #f2f2f2;
    margin-top:0px;
    padding-left: 3em;
+}
 
+.altmetric-normal-legend a:hover {
+	background-color: transparent;
+}
 
+.altmetric-normal-legend a:hover img {
+	transition: all .2s ease-in-out;
+	transform: scale(0.97);
+}
+
+div#_altmetric_popover_el.altmetric-embed div#_altmetric_container.altmetric_container div#_altmetric_popover_inner .altmetric-popover-content {
+	background-color: transparent !important;
+	font-family: "Gotham-Narrow", sans-serif !important;
+}
+
+a.link-to-altmetric-details-tab {
+	color: #ed0033;
+}
+
+a.link-to-altmetric-details-tab:hover {
+	color: #ed0033;
+	text-transform: none;
 }
 
 /* Unsupported browser message */
