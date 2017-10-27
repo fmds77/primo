@@ -1,5 +1,7 @@
 /** primo new UI - FMDS 20170824 */
 
+/* web icons are credited to https://icons8.com */
+
 /*Uncomment the following lines to move facets to the left*/
 
 /*
@@ -48,6 +50,7 @@ prm-page-nav-menu {
 	display: none;
 }
 
+
 /** typography styles **/
 @font-face {
     font-family: Gotham-Narrow;
@@ -81,15 +84,15 @@ body {
 	letter-spacing: 0.03rem;
 }
 
-[class*=_more], /* read more links in syndetics unbound */
-a {
-	color: #ed0033;
-}
-
 a:hover {
 	background-color: rgba(237,0,51,0.1);
 	box-shadow: inset 0 -1px 0 0 rgba(153,0,51,.5);
 	color: #903;
+}
+
+[class*=_more], /* read more links in syndetics unbound */
+a {
+	color: #ed0033;
 }
 
 h3.item-title { /* entry title */
@@ -265,7 +268,10 @@ prm-search-result-list .pages-separated-with-gaps .results-title:not(.results-ti
 		background-color: #f2f2f2;
 	} */
 
-
+/* emphasised area when action > ellipsis is clicked */	
+.action-list-content:before {
+	box-shadow: 0 0 0 1px #e1b4af, 0 10px 20px -5px rgba(0,0,0,.12), 0 -10px 20px -5px rgba(0,0,0,.12);
+}
 /* separate line for publication date - as requested by tracy (not sure how it affects other areas not yet explored/seen */
 span.media-delimiter {
 	/*display: none;  hides the colon that serves as the delimiter/separator between author and publication date; disabled */
@@ -312,6 +318,9 @@ prm-breadcrumbs .md-chip.persistent-facet {
 	background-color: #e1b4af;
 }
 
+prm-breadcrumbs .md-chip.facet-excluded {
+	color: #903;
+	}
 
 /* facets chevron icon */
 prm-facet prm-icon {
@@ -406,6 +415,11 @@ prm-browse-search-bar .advanced-search-backdrop, prm-journals-search-bar .advanc
 	background-color: transparent;
 	box-shadow: inset 0 -1px 0 0 rgba(58,58,58,0.2);
 }
+
+/* brief results bookmarked */
+/* .list-item-wrapper .item-bookmarked, .list-item-wrapper .item-bookmarked:hover, .prm-highlight, .prm-highlight.prm-hue1, prm-breadcrumbs .md-chip.persistent-facet, prm-breadcrumbs .prm-hue1.md-chip.persistent-facet {
+	background-color: #f0d7d6;
+} */
 
 /* full view results - viewit */
 prm-alma-mashup .viewIt > ul > li a !important {
@@ -510,9 +524,11 @@ li.md-nav-item { /* height adjustment so the hover state covers the whole button
 }
 
 button.libchat_online {
-	font-family: 'Source Sans Pro', sans-serif !important;
 	border-bottom-left-radius: 0px !important;
 	border-bottom-right-radius: 0px !important;
+	font-family: 'Source Sans Pro', sans-serif !important;
+	font-size: 2em;
+	font-weight: 300;
 	/* text-shadow: 1px 1px 1px rgba(0,0,0,0.8); */
 }
 
@@ -527,6 +543,8 @@ button.libchat_offline {
 	cursor: text !important;
 	border-bottom-left-radius: 0px !important;
 	border-bottom-right-radius: 0px !important;
+	font-size: 1.75em;
+	padding: 10px 20px;
 }
 
 #libchat_1a0d766d385e8ead60a389e759268750 .lci_chat_load {
@@ -586,7 +604,7 @@ button.libchat_offline {
    padding-left: 3em;
 }
 
-.altmetric-normal-legend a:hover {
+.altmetric-normal-legend a:hover, .altmetric-embed a:hover {
 	background-color: transparent;
 }
 
@@ -624,6 +642,26 @@ a.link-to-altmetric-details-tab:hover {
 	/* hides the history and favorite icons that overlap the logo */
 	prm-search-bookmark-filter.view-switcher.layout-align-end-center.layout-row.flex-noshrink {
 		display: none;
+	}
+	
+	/* white background on search icons so it won't interfere with long entries */
+	prm-search-bar .simple-search-wrapper .search-actions {
+		background-color: #fff;
+	}
+	
+	/* add background on pin icon so it won't interfere with long entries */
+	.result-item-actions .pin-button {
+		background-color: rgba(255,255,255,0.75);
+		border-radius: 50px;
+	}
+	
+	/* hides icon so it won't interfere with the text */
+	/* it doesn't work because alma css takes precedence */
+	.viewIt > ul > li a[target="_blank"]:before,
+	.external-link, .iframeHeader .submitAsLink.popout + span:before,
+	.getitNoHoldings .requestOptionNoHoldings:after {
+		display: none !important;
+		background-image: none !important;
 	}
 
 	libchat-popup {
