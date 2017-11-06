@@ -73,7 +73,8 @@ prm-page-nav-menu {
 /** element styles **/
 
 html, body {
-	background-color: #f2f2f2; /* requested by tracy - 20171018 */
+	/* background-color: #f2f2f2; */ /* requested by tracy - 20171018 */
+	background-color: #fff; /* returned to white as per university color scheme guidelines 20171102 */
 	height: 100%; /* eliminates background color bug on mobile */
 }
 
@@ -158,8 +159,9 @@ prm-logo a:hover {
 }
 
 /* hiding the main menu - tracy's request */
+/* to be shown again - tracy's request - 20171030 */
 prm-main-menu[menu-type=menu] .top-nav-bar-links {
-	display: none;
+	/* display: none; */
 	}
 	
 	/* mobile view */
@@ -194,6 +196,16 @@ prm-search-bar .simple-search-wrapper .search-actions .md-button {
 	color: #ed0033;
 	}
 
+prm-search-bar .search-switch-buttons .md-button.switch-to-advanced {
+	color: #262223;
+}
+
+prm-search-bar .search-switch-buttons .md-button.switch-to-advanced:hover,
+prm-search-bar .search-switch-buttons .md-button.switch-to-simple:hover {
+	background-color: #ed0033;
+	color: #fff;
+}
+	
 prm-search-bar .simple-search-wrapper .search-actions .md-button:hover {
 	background-color: rgba(237,0,51,0.1);	
 	color: #903;
@@ -201,7 +213,7 @@ prm-search-bar .simple-search-wrapper .search-actions .md-button:hover {
 	
 /* back to simple search button */
 prm-search-bar .search-switch-buttons .md-button.switch-to-simple {
-	color: #fff;
+	color: #262223;
 }
 	
 /* sign in/authentication bar styles */
@@ -260,8 +272,9 @@ prm-search-result-list .pages-separated-with-gaps .results-title:not(.results-ti
 	padding: 0px; /* moves number of results to the left as a result from page numbers being removed */
 	}
 
+/* changes the background color of the brief results */	
 .list-item-wrapper {
-	background-color: #fff; /* as requested by tracy 20171018 */
+	background-color: #f2f2f2;
 }
 
 	/* .list-item-wrapper:hover {
@@ -330,7 +343,7 @@ prm-facet prm-icon {
 /* full view results styles */
 
 .md-dialog-container {
-	background-color: rgba(58,58,58,0.25);
+	background-color: rgba(237,0,51,0.1);
 	}
 	
 .recommendations-title {
@@ -352,6 +365,10 @@ a.md-button[aria-label="Tags"] {display:none;}
 a.md-button[aria-label="nui.mainmenu.label.tags"] {display:none;}
 
 /* side links */
+prm-full-view .services-index-under {
+	z-index: 10; /* fix links appearing under placeholder images */
+}
+
 prm-full-view .services-index-under .md-button {
 	font-size: 0.7rem;
 	}
@@ -386,13 +403,17 @@ prm-full-view .services-index-under .md-button {
 		
 /* secondary bar (search bar) */
 .prm-primary-bg, prm-browse-search-bar, prm-journals-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar {
-	background-color: #ed0033;
+	background-color: #eaebea; /* changed from ed0033 as per university's color scheme guidelines 20171102 */
 	}
 	
 /* advanced search bar */
 prm-browse-search-bar .advanced-search-backdrop, prm-journals-search-bar .advanced-search-backdrop, prm-search-bar .advanced-search-backdrop, prm-tags-search-bar .advanced-search-backdrop {
-	background-color: #ed0033;
+	background-color: #eaebea; /* changed from ed0033 as per university's color scheme guidelines 20171102 */
 	}
+
+prm-search-bar .advanced-search-tabs {
+	background-color: #fff;
+}
 
 /* search scope dropdown */
 .classic-input .search-scope, .prm-alert-bg { /*.bar.alert-bar, is removed because of inline styles in the full view section */
@@ -467,13 +488,15 @@ prm-alma-mashup .viewIt > ul > li a !important {
 
 /* advanced search - add a new line button hover */	
 .md-button.md-primary._md-focused:not([disabled]), .md-button.md-primary.hovered:not([disabled]), .md-button.md-primary.md-focused:not([disabled]), .md-button.md-primary:focus:not([disabled]) { /* , .md-button.md-primary:hover:not([disabled]) is removed because first icon in prm-actions is of different bg color */
-	background-color: rgba(237,0,51,0.25) !important;
+	background-color: rgba(237,0,51,0.1) !important;
 	color: #3a3a3a;
 }
 
 .md-button.md-primary:hover:not([disabled]) {
-	background-color: rgba(58,58,58,0.1);
-	color: #080606;
+	/* background-color: rgba(58,58,58,0.1);
+	color: #080606; */
+	background-color: rgba(237,0,51,0.1) !important;
+	color: #903;
 	}
 
 /* brief results refine link */
