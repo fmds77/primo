@@ -405,6 +405,29 @@ prm-full-view .services-index-under .md-button {
 .prm-primary-bg, prm-browse-search-bar, prm-journals-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar {
 	background-color: #eaebea; /* changed from ed0033 as per university's color scheme guidelines 20171102 */
 	}
+
+/* secondary bar (journal search a to z) */
+.prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar {
+	background-color: #eaebea; /* changed from ed0033 as per university's color scheme guidelines 20171102 */
+	}
+	
+	prm-alphabet-toolbar .md-button {
+		color: #903;
+	}
+	
+	prm-alphabet-toolbar .md-button._md-focused:not([disabled]), prm-alphabet-toolbar .md-button.hovered:not([disabled]), prm-alphabet-toolbar .md-button.md-focused:not([disabled]), prm-alphabet-toolbar .md-button:focus:not([disabled]), prm-alphabet-toolbar .md-button:hover:not([disabled]) {
+		background-color: #e1b4af;
+		color: #ed0033;
+	}
+	
+	prm-alphabet-toolbar .md-button.active, prm-alphabet-toolbar .md-button.active.md-focused, prm-alphabet-toolbar .md-button.active:focus, prm-alphabet-toolbar .md-button.active:hover {
+		background-color: #e1b4af;
+		color: #ed0033;
+	}
+	
+	prm-alphabet-toolbar .md-button.active {
+		box-shadow: none;
+	}
 	
 /* advanced search bar */
 prm-browse-search-bar .advanced-search-backdrop, prm-journals-search-bar .advanced-search-backdrop, prm-search-bar .advanced-search-backdrop, prm-tags-search-bar .advanced-search-backdrop {
