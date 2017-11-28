@@ -69,6 +69,10 @@ prm-page-nav-menu {
     src: url(http://library.westernsydney.edu.au/main/sites/all/themes/western_library/fonts/GothamNarrow-MediumItalic.otf);
 }
 
+.align-center {
+	text-align: center;
+}
+
 
 /** element styles **/
 
