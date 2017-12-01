@@ -43,12 +43,20 @@ prm-search > md-content.padded-container-md-primoExplore-theme {
 	max-width: none;
 }
 
-/* removing pagination */
-._gt-xs prm-page-nav-menu,
+/* removing pagination in brief results ONLY */
+prm-search ._gt-xs prm-page-nav-menu, prm-search ._gt-md
+prm-page-nav-menu, prm-search prm-page-nav-menu {
+    display: none;
+}
+
+/* removing all paginations */
+/* ._gt-xs prm-page-nav-menu,
 ._gt-md prm-page-nav-menu,
 prm-page-nav-menu {
 	display: none;
-}
+} */
+
+
 
 
 /** typography styles **/
