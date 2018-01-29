@@ -730,3 +730,8 @@ a.link-to-altmetric-details-tab:hover {
 		top: 50% !important;
 	}
 }
+
+/* ie 11 fix for PDS - full view isn't showing the full width (as per tracy's issue raised to exlibris) */
+.__gt-sm .full-view-inner-container {
+	width: auto !important;
+}
