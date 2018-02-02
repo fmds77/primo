@@ -164,6 +164,11 @@ prm-user-area .user-menu-button .user-name {
 	color: #fff;
 }
 
+/* added top margin when using the official logo - 20180201 */
+prm-logo .logo-image, prm-logo img {
+	margin-top: 5px;
+}
+
 /* removed styles on logo hover state */
 prm-logo a:hover {
 	background-color: transparent;	
@@ -693,9 +698,21 @@ a.link-to-altmetric-details-tab:hover {
 	max-width: 600px;
 }
 
+/* ie 11 fix for PDS - full view isn't showing the full width (as per tracy's issue raised to exlibris) */
+.__gt-sm .full-view-inner-container {
+	width: auto !important;
+}
+
 /** media queries **/
 
-@media (max-width: 599px) {
+/* phone portrait */
+@media (max-width: 599px) { 
+	
+	/* adjusts the logo size in mobile - not an ideal solution but has to be done - 20180201 */
+	prm-logo .logo-image, prm-logo img {
+		width: 230%;
+		height: auto;
+	}
 
 	/* hides the history and favorite icons that overlap the logo */
 	prm-search-bookmark-filter.view-switcher.layout-align-end-center.layout-row.flex-noshrink {
@@ -731,7 +748,50 @@ a.link-to-altmetric-details-tab:hover {
 	}
 }
 
-/* ie 11 fix for PDS - full view isn't showing the full width (as per tracy's issue raised to exlibris) */
-.__gt-sm .full-view-inner-container {
-	width: auto !important;
+/* phone landscape */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+	/* logo replacement */
+	div#banner {
+		background-image:url(../img/wsu-shield.png);
+		background-repeat: no-repeat;
+		background-position: left middle;
+		width: 48px;
+	}
+	
+		div#banner img {
+			display: none;
+		}
+
+}
+
+/* iPad specific - portrait and landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+	/* logo replacement in tablet view */
+	div#banner {
+		background-image:url(../img/wsu-shield.png);
+		background-repeat: no-repeat;
+		background-position: left middle;
+		width: 48px;
+	}
+	
+		div#banner img {
+			display: none;
+		}
+	  
+	/* prm-search-bookmark-filter.view-switcher.layout-align-end-center.layout-row.flex-noshrink {
+		display: none;
+		}
+	button#more-links-button {
+		display: none;
+	} */
 }
