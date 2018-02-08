@@ -10,7 +10,7 @@ let buildParams = config.buildParams;
 gulp.task('create-package', function () {
     var basedir = 'primo-explore/custom/';
     var customFolderExp = basedir+'*/';
-    console.log('Please Choose a package to create:');
+    console.log('Please choose a package to create:');
     glob(customFolderExp, {}, function (er, files) {
         // Note elision, there is no member at 2 so it isn't visited
         console.log('\r\n');
@@ -21,7 +21,7 @@ gulp.task('create-package', function () {
         prompt.start();
         var property = {
             name: 'package',
-            message: 'Please Choose the level you want to create the package for'
+            message: 'Please choose the level you want to create the package for'
         };
         prompt.get(property, function (err, result) {
 
@@ -36,7 +36,7 @@ gulp.task('create-package', function () {
             console.log(' in  : /packages');
             console.log('\r\n');
             console.log('............................................................................................................................................');
-            return gulp.src(['./primo-explore/custom/'+code,'./primo-explore/custom/'+code+'/html/**','./primo-explore/custom/'+code+'/img/**','./primo-explore/custom/'+code+'/css/custom1.css','./primo-explore/custom/'+code+'/js/custom.js'], {base: './primo-explore/custom'})
+            return gulp.src(['./primo-explore/custom/'+code,'./primo-explore/custom/'+code+'/html/**','./primo-explore/custom/'+code+'/img/**','./primo-explore/custom/'+code+'/css/custom1.css','./primo-explore/custom/'+code+'/css/webfont/**','./primo-explore/custom/'+code+'/js/custom.js'], {base: './primo-explore/custom'})
                 .pipe(zip(code+'.zip'))
                 .pipe(gulp.dest('./packages/'));
         });
