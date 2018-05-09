@@ -466,6 +466,16 @@ prm-search-bar .advanced-search-tabs {
 	border-color: #903;
 	}
 
+/* pre-filter - Primo's new feature for May 2018 (as requested by tracy) */
+md-input-container ._md-select-value, md-input-container .md-select-value, md-input-container input, md-input-container md-select-value, md-input-container textarea {
+	color: #262223;
+	}
+	
+	/* pre-filter highlight bar */
+	.dark-toolbar prm-pre-filters md-input-container:after, .dark-toolbar prm-pre-filters prm-tags-list .md-chips ._md-chip-input-container:after, .dark-toolbar prm-pre-filters prm-tags-list .md-chips .md-chip-input-container:after, .dark-toolbar prm-pre-filters prm-tags-list md-chips ._md-chip-input-container:after, .dark-toolbar prm-pre-filters prm-tags-list md-chips .md-chip-input-container:after, .prm-secondary-bg.prm-hue2, md-checkbox.md-checked ._md-icon, md-checkbox.md-checked .md-icon, md-progress-linear[md-mode=indeterminate].header-progress-bar .prm-hue2.md-bar, md-radio-group.layout-row.md-focused md-radio-button.md-checked :before, prm-tags-list .md-chips .dark-toolbar prm-pre-filters ._md-chip-input-container:after, prm-tags-list .md-chips .dark-toolbar prm-pre-filters .md-chip-input-container:after, prm-tags-list md-chips .dark-toolbar prm-pre-filters ._md-chip-input-container:after, prm-tags-list md-chips .dark-toolbar prm-pre-filters .md-chip-input-container:after {
+		background-color: #903;
+		}
+	
 /* brief results available locations */
 .duedate>span, .fulltext>span, .fulltext_linktorsrc>span, .getit>span, .login-dialog .collapsable-container md-list md-list-item .md-list-item-inner, .login-dialog .md-list[class$=-line] md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list[class$=-line] md-list-item .md-list-item-text h3, .login-dialog .md-list[class$=-line] md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list[class$=-line] md-list-item>.md-no-style .md-list-item-text h3, .login-dialog .md-list md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item .md-list-item-text h3, .login-dialog .md-list md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item>.md-no-style .md-list-item-text h3, .login-dialog md-list md-list-item .md-list-item-text .list-item-title, .login-dialog md-list md-list-item .md-list-item-text h3, .login-dialog md-list md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog md-list md-list-item>.md-no-style .md-list-item-text h3, .md-button.arrow-link-button .button-content, .md-button.arrow-link-button [link-arrow], .not_restricted>span, .prm-links, .restricted>span, .separate-list-items md-list-item .item-loader-with-text .md-button, .tiles-grid-tile .tile-header .header-link .arrow-icon, .tiles-grid-tile .tile-header .header-link:focus, .tiles-grid-tile .tile-header .header-link:hover, .tiles-grid-tile .tile-header .md-button, .woldcat>span, [class*=_more]>span, [class*=_unknown]>span, [class*=available]>span, [class*=check_]>span, [class*=does_not_exist]>span, [class*=FT]>span, [class*=may_]>span, [class*=NFT]>span, [class*=no_]>span, [class*=unavailable]>span, a, md-grid-tile .tile-header .header-link .arrow-icon, md-grid-tile .tile-header .header-link:focus, md-grid-tile .tile-header .header-link:hover, md-grid-tile .tile-header .md-button, md-input-container.has-fixed-message [ng-message] a, md-list-item.list-item-as-link, md-tabs.tabs-as-app .back-button, md-tabs.tabs-as-links md-tab-item, md-tabs.tabs-as-links md-tab-item:not([disabled]), prm-tags-list .md-chips .md-chip .md-chip-content strong, prm-tags-list .md-chips md-chip .md-chip-content strong, prm-tags-list md-chips .md-chip .md-chip-content strong, prm-tags-list md-chips md-chip .md-chip-content strong {
 	color: #ed0033;
@@ -574,6 +584,12 @@ li.md-nav-item { /* height adjustment so the hover state covers the whole button
 	height: 100%;
 	}
 
+/* toast messages (eg. saving searches when logged in) - added 20180227 */ 
+prm-add-alert-toast md-toast .md-button.settings-button, prm-add-alert-toast md-toast .md-button.settings-button md-icon, prm-silent-login-alert-toast md-toast .md-button.settings-button, prm-silent-login-alert-toast md-toast .md-button.settings-button md-icon, prm-timeout-toast md-toast .md-button.settings-button, prm-timeout-toast md-toast .md-button.settings-button md-icon {
+	color: #903;
+}
+	
+	
 /** libchat **/
 .libchat-popup {
 	background-color: #f2f2f2;
