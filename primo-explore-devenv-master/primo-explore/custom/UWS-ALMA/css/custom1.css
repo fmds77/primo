@@ -726,14 +726,20 @@ a.link-to-altmetric-details-tab:hover {
 	
 	/* adjusts the logo size in mobile - not an ideal solution but has to be done - 20180201 */
 	prm-logo .logo-image, prm-logo img {
-		width: 230%;
+		width: 235%;
 		height: auto;
+		margin-top: 15px;
 	}
 
 	/* hides the history and favorite icons that overlap the logo */
 	prm-search-bookmark-filter.view-switcher.layout-align-end-center.layout-row.flex-noshrink {
-		display: none;
+		/* display: none; - removed 20180524 as per SysAid ticket 5919 */
 	}
+		
+		/* adjustments for the icons to accommodate the changes in showing the icons */
+		.md-button.md-icon-button {
+			margin: 0 2px;
+		}
 	
 	/* white background on search icons so it won't interfere with long entries */
 	prm-search-bar .simple-search-wrapper .search-actions {
